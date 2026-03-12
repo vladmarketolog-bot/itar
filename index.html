@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITAR.KZN - Гибкий кирпич</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <div class="navbar-inner container flex justify-between items-center">
+
+            <!-- Logo -->
+            <a href="#" class="navbar-logo flex items-center gap-3">
+                <div class="brand-icon">IT</div>
+                <div>
+                    <div class="font-black tracking-tight uppercase" style="font-size: 1.125rem; line-height: 1;">ITAR<span style="color: var(--color-orange-600);">.</span>KZN</div>
+                    <div class="navbar-tagline">Гибкий кирпич · Казань</div>
+                </div>
+            </a>
+
+            <!-- Desktop nav links -->
+            <div class="nav-links">
+                <a href="#visualizer" class="nav-link">Визуализация</a>
+                <a href="#catalog" class="nav-link">Каталог</a>
+                <a href="#benefits" class="nav-link">Преимущества</a>
+                <a href="#faq" class="nav-link">Вопросы</a>
+            </div>
+
+            <!-- Right group -->
+            <div class="flex items-center gap-3">
+                <a href="tel:+79600774901" class="navbar-phone" aria-label="Телефон">
+                    <i data-lucide="phone" style="width:16px;height:16px;"></i>
+                    <span>+7 (960) 077-49-01</span>
+                </a>
+                <button class="btn btn-primary navbar-cta" onclick="document.getElementById('contactModal')?.classList.remove('hidden') || window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">
+                    Бесплатный расчёт
+                </button>
+                <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Меню">
+                    <i data-lucide="menu" style="width:22px;height:22px;"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenuOverlay" class="mobile-menu-overlay">
+        <div class="mobile-menu-header flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="brand-icon" style="width:2rem;height:2rem;font-size:0.875rem;">IT</div>
+                <span class="font-black tracking-tight uppercase">ITAR<span style="color:var(--color-orange-600);">.</span>KZN</span>
+            </div>
+            <button id="mobileMenuCloseBtn" class="mobile-menu-close" aria-label="Закрыть">
+                <i data-lucide="x" style="width: 24px; height: 24px;"></i>
+            </button>
+        </div>
+        <div class="mobile-menu-links">
+            <a href="#visualizer">Визуализация</a>
+            <a href="#catalog">Каталог</a>
+            <a href="#benefits">Преимущества</a>
+            <a href="#faq">Вопросы и ответы</a>
+        </div>
+        <div class="mobile-menu-footer">
+            <a href="tel:+79600774901" style="display:flex;align-items:center;gap:0.5rem;color:var(--color-slate-600);font-weight:500;margin-bottom:1rem;">
+                <i data-lucide="phone" style="width:18px;height:18px;color:var(--color-orange-600);"></i>
+                +7 (960) 077-49-01
+            </a>
+            <button class="btn btn-primary w-full" style="justify-content:center;">Бесплатный расчёт</button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="container hero-grid">
+            <div>
+                <div class="trend-badge">
+                    <i data-lucide="zap" style="width: 14px; height: 14px;"></i> Тренд 2026: Гибкая отделка
+                </div>
+                <h1 class="hero-title">
+                    Гибкий кирпич.<br>
+                    <span class="text-gradient">Будущее отделки</span>
+                </h1>
+                <p class="hero-desc">
+                    12 коллекций. Собственное производство в Казани. Монтаж бригадой под нашим контролем. Стоимость от 1 150 ₽/м².
+                </p>
+                <div class="flex gap-4 flex-wrap" style="margin-top: 2rem;">
+                    <button class="btn btn-dark">
+                        Смотреть презентацию <i data-lucide="arrow-right" style="width: 20px; height: 20px;"></i>
+                    </button>
+                    <button class="btn btn-white-outline">
+                        <i data-lucide="box" style="width: 20px; height: 20px;"></i> Запросить образцы
+                    </button>
+                </div>
+                <div class="avatars">
+                    <div class="avatar-group">
+                        <img src="https://i.pravatar.cc/100?img=11" alt="User">
+                        <img src="https://i.pravatar.cc/100?img=12" alt="User">
+                        <img src="https://i.pravatar.cc/100?img=13" alt="User">
+                        <img src="https://i.pravatar.cc/100?img=14" alt="User">
+                    </div>
+                    <div style="font-size: 0.875rem;">
+                        <div class="font-bold">1,200+ реализованных объектов</div>
+                        <div style="color: var(--color-slate-500);">в Татарстане и РФ за прошлый год</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="relative">
+                <div class="hero-image-wrap">
+                    <img src="img/1a.webp" alt="Main flexible brick">
+                    <div class="hero-image-card">
+                        <div>
+                            <div style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; opacity: 0.8;">Текстура месяца</div>
+                            <div style="font-size: 1.25rem; font-weight: 700;">Old Kazan Red</div>
+                        </div>
+                        <div style="font-size: 1.5rem; font-weight: 900;">1,150 ₽/м²</div>
+                    </div>
+                </div>
+                <!-- Floating Badge -->
+                <div class="floating-badge">
+                    <div class="flex items-center gap-3">
+                        <div style="padding: 0.5rem; background-color: var(--color-green-50); color: var(--color-green-600); border-radius: 0.5rem;">
+                            <i data-lucide="shield-check"></i>
+                        </div>
+                        <div>
+                            <div class="font-bold" style="font-size: 0.875rem;">Гарантия 25 лет</div>
+                            <div style="font-size: 0.75rem; color: var(--color-slate-500);">на выцветание</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manual Visualizer Section -->
+    <section id="visualizer" class="visualizer-section">
+        <div class="container visualizer-grid">
+            <div class="visualizer-text">
+                <h2 class="visualizer-title">Бесплатная<br>визуализация<br>вашего объекта.</h2>
+                <p style="color: var(--color-slate-400); font-size: 1.125rem; margin-bottom: 2rem; line-height: 1.6;">
+                    Отправьте нам фото вашего дома или помещения, и наш дизайнер бесплатно подготовит 3D-макет с использованием наших фактур гибкого кирпича.
+                </p>
+                <ul style="display: flex; flex-direction: column; gap: 1rem;">
+                    <li class="flex items-center gap-3"><i data-lucide="check-circle-2" style="color: var(--color-orange-500);"></i> 3 варианта расцветки на выбор</li>
+                    <li class="flex items-center gap-3"><i data-lucide="check-circle-2" style="color: var(--color-orange-500);"></i> Точный расчет необходимого количества м²</li>
+                    <li class="flex items-center gap-3"><i data-lucide="check-circle-2" style="color: var(--color-orange-500);"></i> Готовый результат в Telegram или WhatsApp</li>
+                </ul>
+            </div>
+            
+            <div class="visualizer-box">
+                <!-- Messenger Links Box -->
+                <div class="upload-area" style="cursor: default; display: flex; flex-direction: column; justify-content: center; gap: 2rem;">
+                    <div class="bg-grid"></div>
+                    <div style="position: relative; z-index: 10; text-align: center;">
+                        <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">Пришлите нам фото ваших стен</h3>
+                        <p style="color: var(--color-slate-400); margin-bottom: 2rem;">Выберите удобный мессенджер:</p>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 1rem; align-items: center;">
+                            <a href="#" class="btn" style="background-color: #2AABEE; color: white; width: 100%; max-width: 300px; display: flex; justify-content: center; gap: 0.75rem;">
+                                <i data-lucide="send" style="width: 20px; height: 20px;"></i> Написать в Telegram
+                            </a>
+                            <a href="#" class="btn" style="background-color: #25D366; color: white; width: 100%; max-width: 300px; display: flex; justify-content: center; gap: 0.75rem;">
+                                <i data-lucide="phone" style="width: 20px; height: 20px;"></i> Написать в WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catalog Section -->
+    <section id="catalog" class="catalog-section">
+        <div class="container">
+            <div class="catalog-header">
+                <div>
+                    <h2 style="font-size: 2.25rem; font-weight: 700; margin-bottom: 1rem;" class="italic">12 Коллекций — 1000+ смыслов</h2>
+                    <p style="color: var(--color-slate-500);">Гибкий кирпич и доска, которые не отличить от оригинала даже профессионалу.</p>
+                </div>
+                <div class="catalog-tabs">
+                    <button class="tab-btn active" data-filter="all">Все</button>
+                    <button class="tab-btn" data-filter="classic">Классика</button>
+                    <button class="tab-btn" data-filter="modern">Модерн</button>
+                </div>
+            </div>
+
+            <div id="productGrid" class="catalog-grid">
+                <!-- Product 1 -->
+                <div class="product-card" data-category="classic">
+                    <div class="product-image-wrap">
+                        <img src="img/Screenshot_1.png" alt="Баварская Кладка (Микс KOBI)">
+                        <div class="product-badge">Хит продаж</div>
+                        <button class="product-btn"><i data-lucide="maximize-2" style="width: 20px; height: 20px;"></i></button>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold" style="font-size: 1.125rem; transition: color 0.3s;" onmouseover="this.style.color='var(--color-orange-600)'" onmouseout="this.style.color='inherit'">Серебристый Микс</h3>
+                            <p style="color: var(--color-slate-500); font-size: 0.875rem;">Гибкий кирпич, 4 оттенка серого</p>
+                        </div>
+                        <div style="text-align: right;">
+                            <div class="font-bold">от 1250 ₽/м²</div>
+                            <div style="font-size: 0.625rem; color: var(--color-slate-400); text-transform: uppercase; font-weight: 700;">За метр кв.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card" data-category="modern">
+                    <div class="product-image-wrap">
+                        <img src="img/Screenshot_2.png" alt="Скандинавский Лофт">
+                        <div class="product-badge">В наличии</div>
+                        <button class="product-btn"><i data-lucide="maximize-2" style="width: 20px; height: 20px;"></i></button>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold" style="font-size: 1.125rem; transition: color 0.3s;" onmouseover="this.style.color='var(--color-orange-600)'" onmouseout="this.style.color='inherit'">Янтарный</h3>
+                            <p style="color: var(--color-slate-500); font-size: 0.875rem;">Гибкий кирпич, золотисто-пшеничный оттенок</p>
+                        </div>
+                        <div style="text-align: right;">
+                            <div class="font-bold">от 1300 ₽/м²</div>
+                            <div style="font-size: 0.625rem; color: var(--color-slate-400); text-transform: uppercase; font-weight: 700;">За метр кв.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card" data-category="modern">
+                    <div class="product-image-wrap">
+                        <img src="img/Screenshot_3.png" alt="Графит Премиум">
+                        <div class="product-badge">В наличии</div>
+                        <button class="product-btn"><i data-lucide="maximize-2" style="width: 20px; height: 20px;"></i></button>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold" style="font-size: 1.125rem; transition: color 0.3s;" onmouseover="this.style.color='var(--color-orange-600)'" onmouseout="this.style.color='inherit'">Красный Классик</h3>
+                            <p style="color: var(--color-slate-500); font-size: 0.875rem;">Гибкий кирпич, насыщенный красный</p>
+                        </div>
+                        <div style="text-align: right;">
+                            <div class="font-bold">от 1450 ₽/м²</div>
+                            <div style="font-size: 0.625rem; color: var(--color-slate-400); text-transform: uppercase; font-weight: 700;">За метр кв.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card" data-category="classic">
+                    <div class="product-image-wrap">
+                        <img src="img/Screenshot_4.png" alt="Старый Кирпич">
+                        <div class="product-badge">В наличии</div>
+                        <button class="product-btn"><i data-lucide="maximize-2" style="width: 20px; height: 20px;"></i></button>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold" style="font-size: 1.125rem; transition: color 0.3s;" onmouseover="this.style.color='var(--color-orange-600)'" onmouseout="this.style.color='inherit'">Тосканский Красный</h3>
+                            <p style="color: var(--color-slate-500); font-size: 0.875rem;">Гибкий кирпич, классическая красная кладка</p>
+                        </div>
+                        <div style="text-align: right;">
+                            <div class="font-bold">от 1180 ₽/м²</div>
+                            <div style="font-size: 0.625rem; color: var(--color-slate-400); text-transform: uppercase; font-weight: 700;">За метр кв.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card" data-category="classic">
+                    <div class="product-image-wrap">
+                        <img src="img/Screenshot_5.png" alt="Английский Клинкер">
+                        <div class="product-badge">В наличии</div>
+                        <button class="product-btn"><i data-lucide="maximize-2" style="width: 20px; height: 20px;"></i></button>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold" style="font-size: 1.125rem; transition: color 0.3s;" onmouseover="this.style.color='var(--color-orange-600)'" onmouseout="this.style.color='inherit'">Коричневый Клинкер</h3>
+                            <p style="color: var(--color-slate-500); font-size: 0.875rem;">Гибкий кирпич, тёплый земляной оттенок</p>
+                        </div>
+                        <div style="text-align: right;">
+                            <div class="font-bold">от 1350 ₽/м²</div>
+                            <div style="font-size: 0.625rem; color: var(--color-slate-400); text-transform: uppercase; font-weight: 700;">За метр кв.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card" data-category="modern">
+                    <div class="product-image-wrap">
+                        <img src="img/Screenshot_6.png" alt="Белый Лофт">
+                        <div class="product-badge">Под заказ</div>
+                        <button class="product-btn"><i data-lucide="maximize-2" style="width: 20px; height: 20px;"></i></button>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold" style="font-size: 1.125rem; transition: color 0.3s;" onmouseover="this.style.color='var(--color-orange-600)'" onmouseout="this.style.color='inherit'">Тёмный Шоколад</h3>
+                            <p style="color: var(--color-slate-500); font-size: 0.875rem;">Гибкий кирпич, шоколадно-коричневый</p>
+                        </div>
+                        <div style="text-align: right;">
+                            <div class="font-bold">от 1200 ₽/м²</div>
+                            <div style="font-size: 0.625rem; color: var(--color-slate-400); text-transform: uppercase; font-weight: 700;">За метр кв.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="product-card" data-category="classic">
+                    <div class="product-image-wrap">
+                        <img src="img/Screenshot_7.png" alt="Амстердам">
+                        <div class="product-badge">В наличии</div>
+                        <button class="product-btn"><i data-lucide="maximize-2" style="width: 20px; height: 20px;"></i></button>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold" style="font-size: 1.125rem; transition: color 0.3s;" onmouseover="this.style.color='var(--color-orange-600)'" onmouseout="this.style.color='inherit'">Баварская Кладка</h3>
+                            <p style="color: var(--color-slate-500); font-size: 0.875rem;">Гибкий кирпич, светлый фасад</p>
+                        </div>
+                        <div style="text-align: right;">
+                            <div class="font-bold">от 1400 ₽/м²</div>
+                            <div style="font-size: 0.625rem; color: var(--color-slate-400); text-transform: uppercase; font-weight: 700;">За метр кв.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="product-card" data-category="modern">
+                    <div class="product-image-wrap">
+                        <img src="img/Screenshot_8.png" alt="Антрацит">
+                        <div class="product-badge">В наличии</div>
+                        <button class="product-btn"><i data-lucide="maximize-2" style="width: 20px; height: 20px;"></i></button>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold" style="font-size: 1.125rem; transition: color 0.3s;" onmouseover="this.style.color='var(--color-orange-600)'" onmouseout="this.style.color='inherit'">Стальной Графит</h3>
+                            <p style="color: var(--color-slate-500); font-size: 0.875rem;">Гибкий кирпич, тёмно-серый</p>
+                        </div>
+                        <div style="text-align: right;">
+                            <div class="font-bold">от 1450 ₽/м²</div>
+                            <div style="font-size: 0.625rem; color: var(--color-slate-400); text-transform: uppercase; font-weight: 700;">За метр кв.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 9 -->
+                <div class="product-card" data-category="classic">
+                    <div class="product-image-wrap">
+                        <img src="img/Screenshot_9.png" alt="Венеция">
+                        <div class="product-badge">Под заказ</div>
+                        <button class="product-btn"><i data-lucide="maximize-2" style="width: 20px; height: 20px;"></i></button>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold" style="font-size: 1.125rem; transition: color 0.3s;" onmouseover="this.style.color='var(--color-orange-600)'" onmouseout="this.style.color='inherit'">Слоновая Кость</h3>
+                            <p style="color: var(--color-slate-500); font-size: 0.875rem;">Гибкий кирпич, светлый беж</p>
+                        </div>
+                        <div style="text-align: right;">
+                            <div class="font-bold">от 1500 ₽/м²</div>
+                            <div style="font-size: 0.625rem; color: var(--color-slate-400); text-transform: uppercase; font-weight: 700;">За метр кв.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 10 -->
+                <div class="product-card" data-category="modern">
+                    <div class="product-image-wrap">
+                        <img src="img/Screenshot_10.png" alt="Песчаник">
+                        <div class="product-badge">В наличии</div>
+                        <button class="product-btn"><i data-lucide="maximize-2" style="width: 20px; height: 20px;"></i></button>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold" style="font-size: 1.125rem; transition: color 0.3s;" onmouseover="this.style.color='var(--color-orange-600)'" onmouseout="this.style.color='inherit'">Чёрная Жемчужина</h3>
+                            <p style="color: var(--color-slate-500); font-size: 0.875rem;">Гибкий кирпич, угольно-чёрный</p>
+                        </div>
+                        <div style="text-align: right;">
+                            <div class="font-bold">от 1150 ₽/м²</div>
+                            <div style="font-size: 0.625rem; color: var(--color-slate-400); text-transform: uppercase; font-weight: 700;">За метр кв.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 11 -->
+                <div class="product-card" data-category="classic">
+                    <div class="product-image-wrap">
+                        <img src="img/Screenshot_11.png" alt="Манхэттен">
+                        <div class="product-badge">В наличии</div>
+                        <button class="product-btn"><i data-lucide="maximize-2" style="width: 20px; height: 20px;"></i></button>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold" style="font-size: 1.125rem; transition: color 0.3s;" onmouseover="this.style.color='var(--color-orange-600)'" onmouseout="this.style.color='inherit'">Каштан</h3>
+                            <p style="color: var(--color-slate-500); font-size: 0.875rem;">Гибкий кирпич, тёплый коричневый</p>
+                        </div>
+                        <div style="text-align: right;">
+                            <div class="font-bold">от 1450 ₽/м²</div>
+                            <div style="font-size: 0.625rem; color: var(--color-slate-400); text-transform: uppercase; font-weight: 700;">За метр кв.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 12 -->
+                <div class="product-card" data-category="modern">
+                    <div class="product-image-wrap">
+                        <img src="img/Screenshot_12.png" alt="Терракота">
+                        <div class="product-badge">В наличии</div>
+                        <button class="product-btn"><i data-lucide="maximize-2" style="width: 20px; height: 20px;"></i></button>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold" style="font-size: 1.125rem; transition: color 0.3s;" onmouseover="this.style.color='var(--color-orange-600)'" onmouseout="this.style.color='inherit'">Терракота Микс</h3>
+                            <p style="color: var(--color-slate-500); font-size: 0.875rem;">Гибкий кирпич, палитра 4 оттенков</p>
+                        </div>
+                        <div style="text-align: right;">
+                            <div class="font-bold">от 1250 ₽/м²</div>
+                            <div style="font-size: 0.625rem; color: var(--color-slate-400); text-transform: uppercase; font-weight: 700;">За метр кв.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Custom Order Box -->
+            <div class="custom-order">
+                <div style="flex: 1;">
+                    <h3 style="font-size: 1.875rem; font-weight: 700; margin-bottom: 1rem;">Нужен индивидуальный цвет?</h3>
+                    <p style="color: var(--color-slate-600); margin-bottom: 1.5rem; line-height: 1.6;">Мы разработаем уникальную фактуру и оттенок под ваш проект. Собственное производство в Казани позволяет делать образцы за 48 часов.</p>
+                    <button class="btn btn-dark">Обсудить спецзаказ</button>
+                </div>
+                <div class="custom-order-img">
+                    <img src="img/6694095990.jpg" alt="Special order" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust & Comparison Section -->
+    <section id="benefits" class="benefits-section">
+        <div class="container">
+            <div class="text-center" style="max-width: 42rem; margin: 0 auto; margin-bottom: 5rem;">
+                <h2 style="font-size: 2.25rem; font-weight: 700; margin-bottom: 1.5rem;" class="italic">С нами вы получите</h2>
+                <p style="color: var(--color-slate-600); font-size: 1.125rem;">Собственное производство качественного и презентабельного материала в кратчайшие сроки.</p>
+            </div>
+            
+            <div class="benefits-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                <div class="benefit-card">
+                    <div class="benefit-icon blue"><i data-lucide="eye" style="width: 28px; height: 28px;"></i></div>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; text-decoration: underline; text-decoration-color: var(--color-blue-200); text-underline-offset: 8px;">Визуализация объекта</h3>
+                    <p style="color: var(--color-slate-600); font-size: 0.875rem; line-height: 1.6;">Мы сделаем визуализацию вашего объекта до заказа, чтобы вы точно знали, как будет выглядеть результат.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon orange"><i data-lucide="palette" style="width: 28px; height: 28px;"></i></div>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; text-decoration: underline; text-decoration-color: var(--color-orange-200); text-underline-offset: 8px;">Индивидуальный подбор</h3>
+                    <p style="color: var(--color-slate-600); font-size: 0.875rem; line-height: 1.6;">Подбор или комбинации цветов гибкого кирпича, а также выбор индивидуальной расцветки и фактуры специально для вас.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon green"><i data-lucide="hammer" style="width: 28px; height: 28px;"></i></div>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; text-decoration: underline; text-decoration-color: var(--color-green-200); text-underline-offset: 8px;">Профессиональный монтаж</h3>
+                    <p style="color: var(--color-slate-600); font-size: 0.875rem; line-height: 1.6;">Монтаж под нашим строгим контролем собственной бригадой. Экономия бюджета с выгодой в 2 раза.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon" style="background-color: var(--color-slate-100); color: var(--color-slate-800);"><i data-lucide="factory" style="width: 28px; height: 28px;"></i></div>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; text-decoration: underline; text-decoration-color: var(--color-slate-300); text-underline-offset: 8px;">Собственное производство</h3>
+                    <p style="color: var(--color-slate-600); font-size: 0.875rem; line-height: 1.6;">Гарантируем производство качественного и презентабельного фасадного материала в кратчайшие сроки.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon" style="background-color: rgba(234, 179, 8, 0.1); color: rgb(202, 138, 4);"><i data-lucide="shield-check" style="width: 28px; height: 28px;"></i></div>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; text-decoration: underline; text-decoration-color: rgba(234, 179, 8, 0.3); text-underline-offset: 8px;">Надежная гарантия</h3>
+                    <p style="color: var(--color-slate-600); font-size: 0.875rem; line-height: 1.6;">Мы уверены в качестве наших материалов и работ. Предоставляем официальную гарантию 5 лет после монтажа.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Applications Section -->
+    <section class="applications-section" style="padding: 6rem 0; background-color: var(--color-slate-50);">
+        <div class="container">
+            <h2 style="font-size: 2.25rem; font-weight: 700; margin-bottom: 3rem; text-align: center;" class="italic">Сферы применения гибкого кирпича</h2>
+            <div class="app-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                <div class="app-card" style="background: white; padding: 1.5rem; border-radius: 1rem; display: flex; align-items: flex-start; gap: 1rem; border: 1px solid var(--color-slate-200);">
+                    <i data-lucide="building-2" style="color: var(--color-orange-600); width: 32px; height: 32px; flex-shrink: 0;"></i>
+                    <div>
+                        <h4 style="font-weight: 700; margin-bottom: 0.5rem; font-size: 1.125rem;">Внешняя отделка многоквартирных домов</h4>
+                    </div>
+                </div>
+                <div class="app-card" style="background: white; padding: 1.5rem; border-radius: 1rem; display: flex; align-items: flex-start; gap: 1rem; border: 1px solid var(--color-slate-200);">
+                    <i data-lucide="home" style="color: var(--color-orange-600); width: 32px; height: 32px; flex-shrink: 0;"></i>
+                    <div>
+                        <h4 style="font-weight: 700; margin-bottom: 0.5rem; font-size: 1.125rem;">Внешняя отделка частных домов</h4>
+                    </div>
+                </div>
+                <div class="app-card" style="background: white; padding: 1.5rem; border-radius: 1rem; display: flex; align-items: flex-start; gap: 1rem; border: 1px solid var(--color-slate-200);">
+                    <i data-lucide="paint-roller" style="color: var(--color-blue-600); width: 32px; height: 32px; flex-shrink: 0;"></i>
+                    <div>
+                        <h4 style="font-weight: 700; margin-bottom: 0.5rem; font-size: 1.125rem;">Внутренняя отделка домов</h4>
+                    </div>
+                </div>
+                <div class="app-card" style="background: white; padding: 1.5rem; border-radius: 1rem; display: flex; align-items: flex-start; gap: 1rem; border: 1px solid var(--color-slate-200);">
+                    <i data-lucide="sofa" style="color: var(--color-blue-600); width: 32px; height: 32px; flex-shrink: 0;"></i>
+                    <div>
+                        <h4 style="font-weight: 700; margin-bottom: 0.5rem; font-size: 1.125rem;">Внутренняя отделка квартир</h4>
+                    </div>
+                </div>
+                <div class="app-card" style="background: white; padding: 1.5rem; border-radius: 1rem; display: flex; align-items: flex-start; gap: 1rem; border: 1px solid var(--color-slate-200);">
+                    <i data-lucide="wallpaper" style="color: var(--color-blue-600); width: 32px; height: 32px; flex-shrink: 0;"></i>
+                    <div>
+                        <h4 style="font-weight: 700; margin-bottom: 0.5rem; font-size: 1.125rem;">Коридоры, акцентные стены, балконы</h4>
+                    </div>
+                </div>
+                <div class="app-card" style="background: white; padding: 1.5rem; border-radius: 1rem; display: flex; align-items: flex-start; gap: 1rem; border: 1px solid var(--color-slate-200);">
+                    <i data-lucide="store" style="color: var(--color-green-600); width: 32px; height: 32px; flex-shrink: 0;"></i>
+                    <div>
+                        <h4 style="font-weight: 700; margin-bottom: 0.5rem; font-size: 1.125rem;">Кафе, бани, гаражи, бойлерные, заборы</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cases Section -->
+    <section class="cases-section" style="padding: 6rem 0;">
+        <div class="container">
+            <h2 style="font-size: 2.25rem; font-weight: 700; margin-bottom: 3rem; text-align: center;" class="italic">Наши работы</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
+
+                <!-- Case 1 -->
+                <div class="case-card" style="border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+                    <div style="height: 260px; background-color: var(--color-slate-200); position: relative;">
+                        <img src="img/p1.jpg" alt="Работа 1" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; bottom: 0; left: 0; background: rgba(0,0,0,0.6); color: white; padding: 0.5rem 1rem; border-top-right-radius: 0.5rem;">Частный дом</div>
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <h3 style="font-weight: 700; font-size: 1.125rem; margin-bottom: 0.5rem;">Отделка фасада</h3>
+                        <p style="color: var(--color-slate-600); font-size: 0.875rem;">Гибкий кирпич, внешняя отделка</p>
+                    </div>
+                </div>
+
+                <!-- Case 2 -->
+                <div class="case-card" style="border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+                    <div style="height: 260px; background-color: var(--color-slate-200); position: relative;">
+                        <img src="img/p2.jpg" alt="Работа 2" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; bottom: 0; left: 0; background: rgba(0,0,0,0.6); color: white; padding: 0.5rem 1rem; border-top-right-radius: 0.5rem;">Частный дом</div>
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <h3 style="font-weight: 700; font-size: 1.125rem; margin-bottom: 0.5rem;">Отделка фасада</h3>
+                        <p style="color: var(--color-slate-600); font-size: 0.875rem;">Гибкий кирпич, внешняя отделка</p>
+                    </div>
+                </div>
+
+                <!-- Case 3 -->
+                <div class="case-card" style="border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+                    <div style="height: 260px; background-color: var(--color-slate-200); position: relative;">
+                        <img src="img/p3.jpg" alt="Работа 3" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; bottom: 0; left: 0; background: rgba(0,0,0,0.6); color: white; padding: 0.5rem 1rem; border-top-right-radius: 0.5rem;">Коммерческий объект</div>
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <h3 style="font-weight: 700; font-size: 1.125rem; margin-bottom: 0.5rem;">Отделка объекта</h3>
+                        <p style="color: var(--color-slate-600); font-size: 0.875rem;">Гибкий кирпич, внешняя отделка</p>
+                    </div>
+                </div>
+
+                <!-- Case 4 -->
+                <div class="case-card" style="border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+                    <div style="height: 260px; background-color: var(--color-slate-200); position: relative;">
+                        <img src="img/p4.JPG" alt="Работа 4" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; bottom: 0; left: 0; background: rgba(0,0,0,0.6); color: white; padding: 0.5rem 1rem; border-top-right-radius: 0.5rem;">Отделка цоколя</div>
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <h3 style="font-weight: 700; font-size: 1.125rem; margin-bottom: 0.5rem;">Отделка цоколя</h3>
+                        <p style="color: var(--color-slate-600); font-size: 0.875rem;">Гибкий кирпич, цоколь</p>
+                    </div>
+                </div>
+
+                <!-- Case 5 -->
+                <div class="case-card" style="border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+                    <div style="height: 260px; background-color: var(--color-slate-200); position: relative;">
+                        <img src="img/p5.jpg" alt="Работа 5" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; bottom: 0; left: 0; background: rgba(0,0,0,0.6); color: white; padding: 0.5rem 1rem; border-top-right-radius: 0.5rem;">Интерьер</div>
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <h3 style="font-weight: 700; font-size: 1.125rem; margin-bottom: 0.5rem;">Внутренняя отделка</h3>
+                        <p style="color: var(--color-slate-600); font-size: 0.875rem;">Гибкий кирпич, интерьер</p>
+                    </div>
+                </div>
+
+                <!-- Case 6 -->
+                <div class="case-card" style="border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+                    <div style="height: 260px; background-color: var(--color-slate-200); position: relative;">
+                        <img src="img/p6.jpg" alt="Работа 6" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; bottom: 0; left: 0; background: rgba(0,0,0,0.6); color: white; padding: 0.5rem 1rem; border-top-right-radius: 0.5rem;">Коммерческий объект</div>
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <h3 style="font-weight: 700; font-size: 1.125rem; margin-bottom: 0.5rem;">Отделка фасада</h3>
+                        <p style="color: var(--color-slate-600); font-size: 0.875rem;">Гибкий кирпич, внешняя отделка</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Reviews Section -->
+    <section class="reviews-section" style="padding: 6rem 0; background-color: var(--color-slate-900); color: white; overflow: hidden;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.25rem; font-weight: 700; margin-bottom: 1rem;" class="italic">Отзывы довольных клиентов</h2>
+                <div style="display: flex; justify-content: center; gap: 0.25rem; color: #fbbf24;">
+                    <i data-lucide="star" style="fill: currentColor;"></i>
+                    <i data-lucide="star" style="fill: currentColor;"></i>
+                    <i data-lucide="star" style="fill: currentColor;"></i>
+                    <i data-lucide="star" style="fill: currentColor;"></i>
+                    <i data-lucide="star" style="fill: currentColor;"></i>
+                </div>
+            </div>
+            <div style="position: relative; padding: 0 2.5rem;">
+                <button id="reviewPrev" style="position:absolute;left:0;top:50%;transform:translateY(-50%);z-index:10;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:white;width:2.5rem;height:2.5rem;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background 0.3s;" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                    <i data-lucide="chevron-left" style="width:18px;height:18px;"></i>
+                </button>
+                <button id="reviewNext" style="position:absolute;right:0;top:50%;transform:translateY(-50%);z-index:10;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:white;width:2.5rem;height:2.5rem;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background 0.3s;" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                    <i data-lucide="chevron-right" style="width:18px;height:18px;"></i>
+                </button>
+
+                <div id="reviewViewport" style="overflow:hidden;">
+                    <div id="reviewTrack" style="display:flex;gap:1.5rem;transition:transform 0.45s cubic-bezier(0.25,0.46,0.45,0.94);will-change:transform;">
+
+                        <div class="review-slide"><div class="rs-header"><div class="rs-avatar" style="background:var(--color-orange-600);">А</div><div><div class="rs-name">Азат Фасхутдинов</div><div class="rs-role">Владелец частного дома</div></div></div><div class="rs-stars">★★★★★</div><p class="rs-text">«Ребята сами привезли, сами смонтировали. Выглядит потрясающе — как настоящий клинкер, но вышло гораздо дешевле. Соседи уже спрашивают ваш контакт!»</p></div>
+
+                        <div class="review-slide"><div class="rs-header"><div class="rs-avatar" style="background:#2563eb;">И</div><div><div class="rs-name">Ильнар Хасанов</div><div class="rs-role">г. Зеленодольск</div></div></div><div class="rs-stars">★★★★★</div><p class="rs-text">«Нужно было срочно облицевать цоколь. Всё сделали быстро, материал лёгкий — фундамент усиливать не пришлось. Гарантия 5 лет — это серьёзно.»</p></div>
+
+                        <div class="review-slide"><div class="rs-header"><div class="rs-avatar" style="background:#16a34a;">Р</div><div><div class="rs-name">Рустам Нигматуллин</div><div class="rs-role">Дизайнер интерьеров</div></div></div><div class="rs-stars">★★★★★</div><p class="rs-text">«Часто использую гибкий кирпич для акцентных стен. Разнообразие цветов огромное, качество стабильное от партии к партии.»</p></div>
+
+                        <div class="review-slide"><div class="rs-header"><div class="rs-avatar" style="background:#7c3aed;">М</div><div><div class="rs-name">Марина Петрова</div><div class="rs-role">Владелица загородного дома</div></div></div><div class="rs-stars">★★★★★</div><p class="rs-text">«Делали визуализацию перед заказом — очень помогло с выбором. Взяли Баварскую кладку. Смонтировали за 3 дня. Теперь дом — самый красивый в посёлке!»</p></div>
+
+                        <div class="review-slide"><div class="rs-header"><div class="rs-avatar" style="background:#dc2626;">Д</div><div><div class="rs-name">Дмитрий Волков</div><div class="rs-role">Руководитель строительной фирмы</div></div></div><div class="rs-stars">★★★★★</div><p class="rs-text">«Закупаем у Итар-Казань уже второй год на несколько объектов. Цена стабильная, поставки в срок, брак — практически ноль.»</p></div>
+
+                        <div class="review-slide"><div class="rs-header"><div class="rs-avatar" style="background:#0891b2;">Э</div><div><div class="rs-name">Эльмира Сафина</div><div class="rs-role">Владелица кафе, Казань</div></div></div><div class="rs-stars">★★★★★</div><p class="rs-text">«Облицевали фасад кафе — гости сразу начали фотографироваться и выкладывать. Окупилось только за счёт новых клиентов!»</p></div>
+
+                        <div class="review-slide"><div class="rs-header"><div class="rs-avatar" style="background:#b45309;">С</div><div><div class="rs-name">Сергей Михайлов</div><div class="rs-role">Прораб, Набережные Челны</div></div></div><div class="rs-stars">★★★★★</div><p class="rs-text">«Монтировали впервые — инструкция чёткая. Бригада уложила 200 м² за 4 дня. Клиент в восторге, сразу порекомендовал нас соседям.»</p></div>
+
+                        <div class="review-slide"><div class="rs-header"><div class="rs-avatar" style="background:#be185d;">Г</div><div><div class="rs-name">Гузель Хайруллина</div><div class="rs-role">Квартира, г. Казань</div></div></div><div class="rs-stars">★★★★★</div><p class="rs-text">«Сделала акцентную стену в гостиной — выбрала «Тёмный Шоколад». Монтаж занял один день. Все гости спрашивают, куда обратиться!»</p></div>
+
+                        <div class="review-slide"><div class="rs-header"><div class="rs-avatar" style="background:#047857;">Т</div><div><div class="rs-name">Тимур Галиев</div><div class="rs-role">Управляющий пансионата, Иваново</div></div></div><div class="rs-stars">★★★★★</div><p class="rs-text">«Производитель из Казани — не нужно ждать поставок. Отделали фасад, гости стали чаще оставлять положительные отзывы об объекте.»</p></div>
+
+                        <div class="review-slide"><div class="rs-header"><div class="rs-avatar" style="background:#6d28d9;">Л</div><div><div class="rs-name">Лейла Мустафина</div><div class="rs-role">Архитектор, Казань</div></div></div><div class="rs-stars">★★★★★</div><p class="rs-text">«Включила Итар-Казань в список рекомендуемых поставщиков. Широкий выбор, индивидуальный цвет, точное соблюдение размеров — всё на высоте.»</p></div>
+
+                    </div>
+                </div>
+
+                <div id="reviewDots" style="display:flex;justify-content:center;gap:0.5rem;margin-top:2rem;"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SEO / FAQ Knowledge Base -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <div style="max-width: 48rem; margin: 0 auto;">
+                <div class="flex items-center gap-2 font-bold" style="color: var(--color-orange-600); margin-bottom: 1rem;">
+                    <i data-lucide="help-circle" style="width: 20px; height: 20px;"></i> Полезно знать
+                </div>
+                <h2 style="font-size: 2.25rem; font-weight: 700; margin-bottom: 3rem;">Частые вопросы о гибком кирпиче и плитке</h2>
+                
+                <div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Можно ли клеить гибкий кирпич на OSB плиты? <i data-lucide="chevron-right" class="faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Да, это идеальное решение для каркасного домостроения. За счет высокой эластичности материал не трескается при сезонных подвижках древесины.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Как материал ведет себя при морозах в -40°C? <i data-lucide="chevron-right" class="faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Гибкий кирпич ИТАР прошел испытания в условиях Крайнего Севера. Он выдерживает 150+ циклов заморозки без изменения структуры.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Нужно ли дополнительно покрывать кирпич лаком? <i data-lucide="chevron-right" class="faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Наш материал уже содержит защитный акриловый слой, но для зон с высокой проходимостью или кухонных фартуков мы рекомендуем дополнительный слой гидрофобизатора.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Какое количество клея нужно на 1 м²? <i data-lucide="chevron-right" class="faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Средний расход составляет 1.5 - 2 кг готового клея. Кстати, при заказе от 150 м² мы дарим 100 г клея на каждый метр в подарок!
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Какой срок службы у гибкого кирпича на фасаде? <i data-lucide="chevron-right" class="faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            При правильном монтаже и эксплуатации — от 25 лет и более. Мы даём официальную гарантию 5 лет после монтажа нашей бригадой.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Можно ли монтировать гибкий кирпич самостоятельно? <i data-lucide="chevron-right" class="faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Да, материал прост в монтаже: подходит обычный плиточный клей, не нужны специнструменты. Однако для сохранения гарантии рекомендуем монтаж нашей бригадой со скидкой до 20% от прайса.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Можно ли заказать индивидуальный цвет? <i data-lucide="chevron-right" class="faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Да! Собственное производство позволяет изготовить материал по вашему цвету или комбинации. Минимальная партия — от 50 м², срок изготовления — от 10 рабочих дней.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Чем отличается гибкая доска от гибкого кирпича? <i data-lucide="chevron-right" class="faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Гибкая доска имитирует фактуру дерева, шпона или камня — идеальна для внутренних пространств. Гибкий кирпич — более рельефный, объёмный, отлично подходит для фасадов. Оба материала монтируются на любое основание.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Можно ли использовать материал во влажных помещениях? <i data-lucide="chevron-right" class="faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Да, материал влагостойкий. Применяется для отделки бань, бассейнов, кухонных фартуков. Для зон с постоянным попаданием воды рекомендуем нанести дополнительный слой гидрофобизатора.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box">
+                <div class="bg-blob-1"></div>
+                <div class="bg-blob-2"></div>
+                
+                <div style="position: relative; z-index: 10; flex: 1;">
+                    <h2 class="italic" style="color: var(--color-white); font-size: 2.25rem; font-weight: 900; line-height: 1.2; margin-bottom: 2rem;">
+                        Готовы обновить <br>облик ваших стен?
+                    </h2>
+                    <p class="italic" style="color: var(--color-slate-400); font-size: 1.25rem; max-width: 36rem; margin-bottom: 3rem;">
+                        Оставьте заявку сегодня — наш эксперт приедет с образцами в любую точку Казани в течение 24 часов.
+                    </p>
+                    <div class="cta-input-group">
+                        <input type="tel" placeholder="+7 (___) ___-__-__" class="cta-input">
+                        <button class="btn btn-primary" style="padding: 1.25rem 2.5rem; white-space: nowrap;">
+                            Получить каталог и расчет
+                        </button>
+                    </div>
+                </div>
+                
+                <div style="position: relative; z-index: 10; display: none;" class="lg-block">
+                    <div class="cta-contact-card">
+                        <div class="flex items-center gap-4" style="margin-bottom: 1.5rem;">
+                            <div style="width: 3rem; height: 3rem; background-color: var(--color-orange-600); border-radius: 9999px; display: flex; align-items: center; justify-content: center; font-weight: 700;">ИТ</div>
+                            <div>
+                                <div class="font-bold">Итар-Казань</div>
+                                <div style="font-size: 0.75rem; color: var(--color-slate-400);">Производитель #1</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 font-bold" style="font-size: 1.5rem; margin-bottom: 1.5rem;">
+                            <i data-lucide="message-square" style="color: var(--color-orange-600);"></i> +7 (960) 077-49-01
+                        </div>
+                        <div class="italic" style="font-size: 0.875rem; color: var(--color-slate-400);">
+                            "Мы строим отношения, <br> а не просто продаем кирпич"
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Setup rule for inline block on lg -->
+    <style>
+        @media (min-width: 1024px) {
+            .lg-block { display: block !important; }
+        }
+    </style>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <!-- Top accent line -->
+        <div style="height:1px;background:linear-gradient(90deg,transparent,var(--color-orange-600),transparent);"></div>
+
+        <div class="container">
+
+            <!-- Main footer grid -->
+            <div class="footer-main">
+
+                <!-- Brand column -->
+                <div class="footer-brand">
+                    <a href="#" class="flex items-center gap-3" style="text-decoration:none;margin-bottom:1.5rem;display:inline-flex;">
+                        <div style="width:2.75rem;height:2.75rem;background:linear-gradient(135deg,var(--color-orange-600),#ff8c42);border-radius:0.75rem;display:flex;align-items:center;justify-content:center;color:white;font-weight:900;font-size:1rem;box-shadow:0 4px 16px rgba(234,88,12,0.4);">IT</div>
+                        <div>
+                            <div class="font-black tracking-tight uppercase" style="font-size:1.125rem;color:white;line-height:1;">ITAR<span style="color:var(--color-orange-600);">.</span>KZN</div>
+                            <div style="font-size:0.625rem;color:#64748b;letter-spacing:0.08em;text-transform:uppercase;margin-top:2px;">Производство · Казань</div>
+                        </div>
+                    </a>
+                    <p style="font-size:0.875rem;color:#64748b;line-height:1.7;max-width:22rem;">
+                        Собственное производство гибкого кирпича и гибкой доски. Работаем с 2018 года. 12 коллекций, монтаж под&nbsp;ключ по всей России.
+                    </p>
+                    <div class="footer-socials">
+                        <a href="#" class="footer-social-btn" aria-label="ВКонтакте">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.408 0 15.684 0zm3.692 17.123h-1.744c-.66 0-.862-.525-2.049-1.714-1.033-1.001-1.49-.874-1.49.287v1.427c0 .375-.12.6-1.1.6-1.624 0-3.42-.998-4.684-2.853-1.9-2.674-2.423-4.668-2.423-5.081 0-.201.08-.39.39-.39h1.744c.288 0 .398.133.51.453.562 1.62 1.5 3.043 1.885 3.043.145 0 .21-.067.21-.432V9.982c-.043-.776-.456-.84-.456-1.115 0-.148.12-.3.31-.3h2.745c.24 0 .325.125.325.39v3.274c0 .24.105.325.17.325.14 0 .26-.085.519-.345 1.608-1.8 2.756-4.574 2.756-4.574.076-.15.21-.29.449-.29h1.745c.52 0 .633.267.52.59-.218.99-2.327 3.99-2.327 3.99-.186.305-.252.44 0 .78.186.26.794.8 1.2 1.284.744.861 1.318 1.584 1.47 2.082.135.493-.141.744-.634.744z"/></svg>
+                        </a>
+                        <a href="#" class="footer-social-btn" aria-label="WhatsApp">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        </a>
+                        <a href="#" class="footer-social-btn" aria-label="Telegram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Products -->
+                <div class="footer-col">
+                    <h4 class="footer-heading">Продукция</h4>
+                    <ul class="footer-links">
+                        <li><a href="#catalog">Гибкий кирпич</a></li>
+                        <li><a href="#catalog">Гибкая доска</a></li>
+                        <li><a href="#catalog">Баварская кладка</a></li>
+                        <li><a href="#catalog">Клинкерный формат</a></li>
+                    </ul>
+                </div>
+
+                <!-- Partners -->
+                <div class="footer-col">
+                    <h4 class="footer-heading">Партнёрам</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Для архитекторов</a></li>
+                        <li><a href="#">Дилерская сеть</a></li>
+                        <li><a href="#">Франшиза ИТАР</a></li>
+                        <li><a href="#">Скачать 3D модели</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contacts -->
+                <div class="footer-col">
+                    <h4 class="footer-heading">Контакты</h4>
+                    <ul class="footer-contact-list">
+                        <li>
+                            <i data-lucide="map-pin" style="width:15px;height:15px;color:var(--color-orange-600);flex-shrink:0;"></i>
+                            г. Казань, ул. Магистральная, 77
+                        </li>
+                        <li>
+                            <i data-lucide="mail" style="width:15px;height:15px;color:var(--color-orange-600);flex-shrink:0;"></i>
+                            <a href="mailto:ajnur.axmadiev@yandex.ru">ajnur.axmadiev@yandex.ru</a>
+                        </li>
+                        <li>
+                            <i data-lucide="phone" style="width:15px;height:15px;color:var(--color-orange-600);flex-shrink:0;"></i>
+                            <a href="tel:+79600774901" style="font-weight:700;color:white;">+7 (960) 077-49-01</a>
+                        </li>
+                    </ul>
+                    <a href="tel:+79600774901" class="btn btn-primary footer-cta-btn">
+                        Позвонить нам
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Divider -->
+            <div style="height:1px;background:rgba(255,255,255,0.06);margin:2.5rem 0 1.5rem;"></div>
+
+            <!-- Footer bottom -->
+            <div class="footer-bottom">
+                <p>© 2026 Итар-Казань. Все права защищены.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Публичная оферта</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+
+    <!-- Product Popup Modal -->
+    <div id="productModal" class="modal-overlay hidden">
+        <div class="modal-container">
+            <button id="closeModalBtn" class="modal-close-btn">
+                <i data-lucide="x" style="width: 24px; height: 24px;"></i>
+            </button>
+            <div class="modal-content">
+                <div class="modal-image-wrap">
+                    <img id="modalImage" src="" alt="Product">
+                </div>
+                <div class="modal-info">
+                    <h3 id="modalTitle" class="modal-title">Название товара</h3>
+                    <p id="modalCategory" class="modal-category">Категория</p>
+                    <div id="modalPrice" class="modal-price">Цена</div>
+                    
+                    <button class="btn btn-primary w-full" style="margin-top: 2rem; padding: 1rem;">
+                        Рассчитать цену <i data-lucide="calculator" style="width: 20px; height: 20px;"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
