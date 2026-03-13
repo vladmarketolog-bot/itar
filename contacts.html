@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты и реквизиты — ITAR.KZN</title>
+    <meta name="description" content="Контакты и официальные реквизиты ITAR.KZN — производителя гибкого кирпича в Казани. ИП Ахмадиев А.А., ИНН 160102074997.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ── Page-level overrides ── */
+        :root {
+            --glass-bg: rgba(255,255,255,0.05);
+            --glass-border: rgba(255,255,255,0.10);
+            --orange: #ea580c;
+            --orange-light: rgba(234,88,12,0.15);
+        }
+
+        /* ── Contacts Hero ── */
+        .contacts-hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            padding: 9rem 0 5rem;
+            position: relative;
+            overflow: hidden;
+            color: white;
+        }
+        .contacts-hero::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 60rem;
+            height: 60rem;
+            background: radial-gradient(circle, rgba(234,88,12,0.12) 0%, transparent 65%);
+            pointer-events: none;
+        }
+        .contacts-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -5%;
+            width: 40rem;
+            height: 40rem;
+            background: radial-gradient(circle, rgba(59,130,246,0.07) 0%, transparent 65%);
+            pointer-events: none;
+        }
+        .hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--orange-light);
+            border: 1px solid rgba(234,88,12,0.3);
+            color: #fb923c;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.4rem 1rem;
+            border-radius: 9999px;
+            margin-bottom: 1.5rem;
+        }
+        .contacts-hero h1 {
+            font-size: clamp(2.25rem, 5vw, 3.75rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.02em;
+        }
+        .contacts-hero p {
+            color: #94a3b8;
+            font-size: 1.125rem;
+            max-width: 38rem;
+            line-height: 1.7;
+        }
+
+        /* ── Quick contacts row ── */
+        .quick-contacts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.25rem;
+            margin-top: 3.5rem;
+        }
+        .quick-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(12px);
+            border-radius: 1.25rem;
+            padding: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            transition: border-color 0.3s, transform 0.3s;
+            text-decoration: none;
+            color: white;
+        }
+        .quick-card:hover {
+            border-color: rgba(234,88,12,0.5);
+            transform: translateY(-3px);
+        }
+        .quick-card-icon {
+            width: 2.75rem;
+            height: 2.75rem;
+            background: var(--orange-light);
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fb923c;
+            flex-shrink: 0;
+        }
+        .quick-card-label {
+            font-size: 0.75rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        .quick-card-value {
+            font-size: 1rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        /* ── Main content ── */
+        .contacts-body {
+            background: #f8fafc;
+            padding: 5rem 0;
+        }
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+        @media (max-width: 768px) {
+            .contacts-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ── Реквизиты card ── */
+        .req-card {
+            background: white;
+            border-radius: 1.5rem;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+            overflow: hidden;
+        }
+        .req-card-header {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            padding: 1.75rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .req-card-header-icon {
+            width: 3rem;
+            height: 3rem;
+            background: var(--orange-light);
+            border-radius: 0.875rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fb923c;
+        }
+        .req-card-header h2 {
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 0;
+        }
+        .req-card-header p {
+            color: #64748b;
+            font-size: 0.8rem;
+            margin: 0;
+        }
+        .req-list {
+            padding: 0.5rem 0;
+        }
+        .req-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid #f1f5f9;
+            gap: 1rem;
+            transition: background 0.15s;
+        }
+        .req-row:last-child { border-bottom: none; }
+        .req-row:hover { background: #f8fafc; }
+        .req-label {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            flex-shrink: 0;
+            min-width: 8rem;
+        }
+        .req-value {
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: #0f172a;
+            text-align: right;
+            word-break: break-word;
+        }
+        .req-value.mono {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #1e40af;
+        }
+        .copy-btn {
+            background: none;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            padding: 0.35rem 0.6rem;
+            cursor: pointer;
+            color: #94a3b8;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            white-space: nowrap;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+        .copy-btn:hover {
+            background: var(--orange-light);
+            border-color: rgba(234,88,12,0.4);
+            color: var(--orange);
+        }
+        .copy-btn.copied {
+            background: #dcfce7;
+            border-color: #86efac;
+            color: #16a34a;
+        }
+
+        /* ── Contacts right column ── */
+        .contact-section-card {
+            background: white;
+            border-radius: 1.5rem;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .contact-section-card h3 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.625rem;
+        }
+        .contact-section-card h3 .icon-wrap {
+            width: 2.25rem;
+            height: 2.25rem;
+            background: var(--orange-light);
+            border-radius: 0.625rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--orange);
+        }
+
+        /* Messenger buttons */
+        .messenger-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.875rem;
+            padding: 1rem 1.25rem;
+            border-radius: 1rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9375rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-bottom: 0.75rem;
+            color: white;
+        }
+        .messenger-btn:last-child { margin-bottom: 0; }
+        .messenger-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+        .messenger-btn.tg { background: linear-gradient(135deg, #2AABEE, #1a8cc5); }
+        .messenger-btn.wa { background: linear-gradient(135deg, #25D366, #128c42); }
+        .messenger-btn.tel { background: linear-gradient(135deg, #ea580c, #c2410c); }
+        .messenger-btn-icon {
+            width: 2.25rem;
+            height: 2.25rem;
+            background: rgba(255,255,255,0.2);
+            border-radius: 0.625rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .messenger-btn-text {
+            flex: 1;
+        }
+        .messenger-btn-sub {
+            font-size: 0.75rem;
+            opacity: 0.8;
+            font-weight: 400;
+            display: block;
+        }
+
+        /* Map placeholder */
+        .map-wrap {
+            border-radius: 1rem;
+            overflow: hidden;
+            height: 180px;
+            background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            font-weight: 600;
+            font-size: 0.875rem;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Работаем с section */
+        .work-hours-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 0.9rem;
+        }
+        .work-hours-row:last-child { border-bottom: none; }
+        .work-hours-day { color: #64748b; }
+        .work-hours-time { font-weight: 700; color: #0f172a; }
+        .work-hours-closed { font-weight: 600; color: #94a3b8; font-style: italic; }
+
+        /* Toast notification */
+        #copyToast {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%) translateY(4rem);
+            background: #0f172a;
+            color: white;
+            padding: 0.875rem 1.5rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.35s;
+            opacity: 0;
+            pointer-events: none;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+        #copyToast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+        #copyToast .toast-icon {
+            width: 1.25rem;
+            height: 1.25rem;
+            background: #16a34a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* section heading */
+        .section-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--orange);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+        .section-title {
+            font-size: 1.875rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+        }
+        .section-sub {
+            color: #64748b;
+            font-size: 1rem;
+            margin-bottom: 2.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <div class="navbar-inner container flex justify-between items-center">
+            <a href="index.html" class="navbar-logo flex items-center gap-3">
+                <div class="brand-icon">IT</div>
+                <div>
+                    <div class="font-black tracking-tight uppercase" style="font-size: 1.125rem; line-height: 1;">ITAR<span style="color: var(--color-orange-600);">.</span>KZN</div>
+                    <div class="navbar-tagline">Гибкий кирпич · Казань</div>
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Главная</a>
+                <a href="flexible_brick.html" class="nav-link">Гибкий кирпич</a>
+                <a href="flexible_board.html" class="nav-link">Гибкая доска</a>
+                <a href="contacts.html" class="nav-link" style="color: var(--color-orange-600); font-weight: 700;">Контакты</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="tel:+79600774901" class="navbar-phone" aria-label="Телефон">
+                    <i data-lucide="phone" style="width:16px;height:16px;"></i>
+                    <span>+7 (960) 077-49-01</span>
+                </a>
+                <button class="btn btn-primary navbar-cta" onclick="window.location.href='index.html'">
+                    Бесплатный расчёт
+                </button>
+                <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Меню">
+                    <i data-lucide="menu" style="width:22px;height:22px;"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenuOverlay" class="mobile-menu-overlay">
+        <div class="mobile-menu-header flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="brand-icon" style="width:2rem;height:2rem;font-size:0.875rem;">IT</div>
+                <span class="font-black tracking-tight uppercase">ITAR<span style="color:var(--color-orange-600);">.</span>KZN</span>
+            </div>
+            <button id="mobileMenuCloseBtn" class="mobile-menu-close" aria-label="Закрыть">
+                <i data-lucide="x" style="width: 24px; height: 24px;"></i>
+            </button>
+        </div>
+        <div class="mobile-menu-links">
+            <a href="index.html">Главная</a>
+            <a href="flexible_brick.html">Гибкий кирпич</a>
+            <a href="flexible_board.html">Гибкая доска</a>
+            <a href="contacts.html">Контакты</a>
+        </div>
+        <div class="mobile-menu-footer">
+            <a href="tel:+79600774901" style="display:flex;align-items:center;gap:0.5rem;color:var(--color-slate-600);font-weight:500;margin-bottom:1rem;">
+                <i data-lucide="phone" style="width:18px;height:18px;color:var(--color-orange-600);"></i>
+                +7 (960) 077-49-01
+            </a>
+            <a href="index.html" class="btn btn-primary w-full" style="justify-content:center;text-decoration:none;">Бесплатный расчёт</a>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="contacts-hero">
+        <div class="container" style="position:relative;z-index:10;">
+            <div class="hero-label">
+                <i data-lucide="map-pin" style="width:14px;height:14px;"></i>
+                ITAR.KZN · Казань
+            </div>
+            <h1>Контакты<br><span class="text-gradient">и реквизиты</span></h1>
+            <p>Свяжитесь с нами любым удобным способом. Все официальные реквизиты для документов в одном месте — нажмите, чтобы скопировать.</p>
+
+            <!-- Quick contact cards -->
+            <div class="quick-contacts">
+                <a href="tel:+79600774901" class="quick-card">
+                    <div class="quick-card-icon">
+                        <i data-lucide="phone" style="width:20px;height:20px;"></i>
+                    </div>
+                    <div>
+                        <div class="quick-card-label">Телефон</div>
+                        <div class="quick-card-value">+7 (960) 077-49-01</div>
+                    </div>
+                </a>
+                <a href="mailto:ajnur.axmadiev@yandex.ru" class="quick-card">
+                    <div class="quick-card-icon">
+                        <i data-lucide="mail" style="width:20px;height:20px;"></i>
+                    </div>
+                    <div>
+                        <div class="quick-card-label">E-mail</div>
+                        <div class="quick-card-value">ajnur.axmadiev@yandex.ru</div>
+                    </div>
+                </a>
+                <div class="quick-card" style="cursor:default;">
+                    <div class="quick-card-icon">
+                        <i data-lucide="building-2" style="width:20px;height:20px;"></i>
+                    </div>
+                    <div>
+                        <div class="quick-card-label">ИНН</div>
+                        <div class="quick-card-value">160102074997</div>
+                    </div>
+                </div>
+                <div class="quick-card" style="cursor:default;">
+                    <div class="quick-card-icon">
+                        <i data-lucide="clock" style="width:20px;height:20px;"></i>
+                    </div>
+                    <div>
+                        <div class="quick-card-label">Режим работы</div>
+                        <div class="quick-card-value">Пн–Пт 9:00 – 18:00</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main content -->
+    <section class="contacts-body">
+        <div class="container">
+            <div style="margin-bottom: 2rem;">
+                <div class="section-eyebrow">
+                    <i data-lucide="file-text" style="width:14px;height:14px;"></i>
+                    Официальные данные
+                </div>
+                <div class="section-title">Реквизиты компании</div>
+                <div class="section-sub">Нажмите кнопку «Копировать» рядом с нужным полем</div>
+            </div>
+
+            <div class="contacts-grid">
+                <!-- LEFT: Реквизиты -->
+                <div>
+                    <!-- Организация -->
+                    <div class="req-card" style="margin-bottom: 1.5rem;">
+                        <div class="req-card-header">
+                            <div class="req-card-header-icon">
+                                <i data-lucide="briefcase" style="width:22px;height:22px;"></i>
+                            </div>
+                            <div>
+                                <h2>Организация</h2>
+                                <p>Юридическое лицо</p>
+                            </div>
+                        </div>
+                        <div class="req-list">
+                            <div class="req-row">
+                                <div>
+                                    <div class="req-label">Полное наименование</div>
+                                    <div class="req-value">Индивидуальный предприниматель<br>Ахмадиев Айнур Альбертович</div>
+                                </div>
+                                <button class="copy-btn" onclick="copyText('Индивидуальный предприниматель Ахмадиев Айнур Альбертович', this)">
+                                    <i data-lucide="copy" style="width:13px;height:13px;"></i> Копировать
+                                </button>
+                            </div>
+                            <div class="req-row">
+                                <div>
+                                    <div class="req-label">Сокращённо</div>
+                                    <div class="req-value">ИП Ахмадиев А.А.</div>
+                                </div>
+                                <button class="copy-btn" onclick="copyText('ИП Ахмадиев А.А.', this)">
+                                    <i data-lucide="copy" style="width:13px;height:13px;"></i> Копировать
+                                </button>
+                            </div>
+                            <div class="req-row">
+                                <div>
+                                    <div class="req-label">ИНН</div>
+                                    <div class="req-value mono">160102074997</div>
+                                </div>
+                                <button class="copy-btn" onclick="copyText('160102074997', this)">
+                                    <i data-lucide="copy" style="width:13px;height:13px;"></i> Копировать
+                                </button>
+                            </div>
+                            <div class="req-row">
+                                <div>
+                                    <div class="req-label">ОГРН</div>
+                                    <div class="req-value mono">32216900094458</div>
+                                </div>
+                                <button class="copy-btn" onclick="copyText('32216900094458', this)">
+                                    <i data-lucide="copy" style="width:13px;height:13px;"></i> Копировать
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Адреса -->
+                    <div class="req-card" style="margin-bottom: 1.5rem;">
+                        <div class="req-card-header">
+                            <div class="req-card-header-icon">
+                                <i data-lucide="map-pin" style="width:22px;height:22px;"></i>
+                            </div>
+                            <div>
+                                <h2>Адреса</h2>
+                                <p>Юридический и почтовый</p>
+                            </div>
+                        </div>
+                        <div class="req-list">
+                            <div class="req-row">
+                                <div>
+                                    <div class="req-label">Юридический адрес</div>
+                                    <div class="req-value" style="max-width: 18rem;">422223, Россия, Республика Татарстан, Агрызский район, д. Касаево, ул. Центральная, 55</div>
+                                </div>
+                                <button class="copy-btn" onclick="copyText('422223, Россия, Республика Татарстан, Агрызский район, д. Касаево, ул. Центральная, 55', this)">
+                                    <i data-lucide="copy" style="width:13px;height:13px;"></i> Копировать
+                                </button>
+                            </div>
+                            <div class="req-row">
+                                <div>
+                                    <div class="req-label">Почтовый адрес</div>
+                                    <div class="req-value" style="max-width: 18rem;">422223, Россия, Республика Татарстан, Агрызский район, д. Касаево, ул. Центральная, 55</div>
+                                </div>
+                                <button class="copy-btn" onclick="copyText('422223, Россия, Республика Татарстан, Агрызский район, д. Касаево, ул. Центральная, 55', this)">
+                                    <i data-lucide="copy" style="width:13px;height:13px;"></i> Копировать
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Банковские реквизиты -->
+                    <div class="req-card">
+                        <div class="req-card-header">
+                            <div class="req-card-header-icon">
+                                <i data-lucide="landmark" style="width:22px;height:22px;"></i>
+                            </div>
+                            <div>
+                                <h2>Банковские реквизиты</h2>
+                                <p>Для выставления счётов</p>
+                            </div>
+                        </div>
+                        <div class="req-list">
+                            <div class="req-row">
+                                <div>
+                                    <div class="req-label">Банк</div>
+                                    <div class="req-value">ООО «ОЗОН Банк»</div>
+                                </div>
+                                <button class="copy-btn" onclick="copyText('ООО «ОЗОН Банк»', this)">
+                                    <i data-lucide="copy" style="width:13px;height:13px;"></i> Копировать
+                                </button>
+                            </div>
+                            <div class="req-row">
+                                <div>
+                                    <div class="req-label">БИК</div>
+                                    <div class="req-value mono">044525068</div>
+                                </div>
+                                <button class="copy-btn" onclick="copyText('044525068', this)">
+                                    <i data-lucide="copy" style="width:13px;height:13px;"></i> Копировать
+                                </button>
+                            </div>
+                            <div class="req-row">
+                                <div>
+                                    <div class="req-label">Расчётный счёт</div>
+                                    <div class="req-value mono">40802810500000379362</div>
+                                </div>
+                                <button class="copy-btn" onclick="copyText('40802810500000379362', this)">
+                                    <i data-lucide="copy" style="width:13px;height:13px;"></i> Копировать
+                                </button>
+                            </div>
+                            <div class="req-row">
+                                <div>
+                                    <div class="req-label">Корр. счёт</div>
+                                    <div class="req-value mono">30101810645374525068</div>
+                                </div>
+                                <button class="copy-btn" onclick="copyText('30101810645374525068', this)">
+                                    <i data-lucide="copy" style="width:13px;height:13px;"></i> Копировать
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Copy All Button -->
+                    <button id="copyAllBtn" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:1.25rem;padding:1rem;" onclick="copyAllRequisites()">
+                        <i data-lucide="clipboard-copy" style="width:18px;height:18px;"></i>
+                        Скопировать все реквизиты
+                    </button>
+                </div>
+
+                <!-- RIGHT: Contacts & map -->
+                <div>
+                    <!-- Связаться -->
+                    <div class="contact-section-card">
+                        <h3>
+                            <div class="icon-wrap">
+                                <i data-lucide="message-circle" style="width:18px;height:18px;"></i>
+                            </div>
+                            Написать нам
+                        </h3>
+                        <a href="https://t.me/itar_kzn" class="messenger-btn tg" target="_blank" rel="noopener">
+                            <div class="messenger-btn-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                            </div>
+                            <div class="messenger-btn-text">
+                                Telegram
+                                <span class="messenger-btn-sub">Ответим в течение часа</span>
+                            </div>
+                            <i data-lucide="arrow-right" style="width:18px;height:18px;opacity:0.7;"></i>
+                        </a>
+                        <a href="https://wa.me/79600774901" class="messenger-btn wa" target="_blank" rel="noopener">
+                            <div class="messenger-btn-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            </div>
+                            <div class="messenger-btn-text">
+                                WhatsApp
+                                <span class="messenger-btn-sub">Отправить сообщение</span>
+                            </div>
+                            <i data-lucide="arrow-right" style="width:18px;height:18px;opacity:0.7;"></i>
+                        </a>
+                        <a href="tel:+79600774901" class="messenger-btn tel">
+                            <div class="messenger-btn-icon">
+                                <i data-lucide="phone" style="width:20px;height:20px;"></i>
+                            </div>
+                            <div class="messenger-btn-text">
+                                +7 (960) 077-49-01
+                                <span class="messenger-btn-sub">Позвонить напрямую</span>
+                            </div>
+                            <i data-lucide="arrow-right" style="width:18px;height:18px;opacity:0.7;"></i>
+                        </a>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="contact-section-card">
+                        <h3>
+                            <div class="icon-wrap">
+                                <i data-lucide="mail" style="width:18px;height:18px;"></i>
+                            </div>
+                            Электронная почта
+                        </h3>
+                        <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;background:#f8fafc;border-radius:0.875rem;padding:1rem 1.25rem;border:1px solid #e2e8f0;">
+                            <div>
+                                <div style="font-size:0.75rem;color:#94a3b8;text-transform:uppercase;letter-spacing:0.05em;font-weight:600;margin-bottom:0.25rem;">E-mail</div>
+                                <a href="mailto:ajnur.axmadiev@yandex.ru" style="font-size:0.9375rem;font-weight:700;color:#1e40af;text-decoration:none;">ajnur.axmadiev@yandex.ru</a>
+                            </div>
+                            <button class="copy-btn" onclick="copyText('ajnur.axmadiev@yandex.ru', this)" style="flex-shrink:0;">
+                                <i data-lucide="copy" style="width:13px;height:13px;"></i> Копировать
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- График работы -->
+                    <div class="contact-section-card">
+                        <h3>
+                            <div class="icon-wrap">
+                                <i data-lucide="clock" style="width:18px;height:18px;"></i>
+                            </div>
+                            График работы
+                        </h3>
+                        <div class="work-hours-row">
+                            <span class="work-hours-day">Понедельник – пятница</span>
+                            <span class="work-hours-time">9:00 – 18:00</span>
+                        </div>
+                        <div class="work-hours-row">
+                            <span class="work-hours-day">Суббота</span>
+                            <span class="work-hours-time">10:00 – 15:00</span>
+                        </div>
+                        <div class="work-hours-row">
+                            <span class="work-hours-day">Воскресенье</span>
+                            <span class="work-hours-closed">Выходной</span>
+                        </div>
+                        <div style="margin-top:1rem;padding:0.875rem 1rem;background:rgba(234,88,12,0.08);border-radius:0.75rem;border-left:3px solid var(--orange);font-size:0.875rem;color:#64748b;">
+                            💬 В мессенджерах отвечаем <strong style="color:#0f172a;">в течение 30 минут</strong> в рабочее время
+                        </div>
+                    </div>
+
+                    <!-- CTA -->
+                    <div style="background:linear-gradient(135deg,#0f172a,#1e293b);border-radius:1.5rem;padding:2rem;position:relative;overflow:hidden;margin-top:0;">
+                        <div style="position:absolute;top:-2rem;right:-2rem;width:10rem;height:10rem;background:radial-gradient(circle,rgba(234,88,12,0.2),transparent 70%);pointer-events:none;"></div>
+                        <div style="position:relative;z-index:1;">
+                            <div style="font-size:0.8rem;color:#fb923c;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.75rem;">🎁 Бесплатно</div>
+                            <h3 style="color:white;font-size:1.25rem;font-weight:800;margin-bottom:0.75rem;line-height:1.3;">ИИ-визуализация вашего объекта</h3>
+                            <p style="color:#64748b;font-size:0.875rem;margin-bottom:1.5rem;line-height:1.6;">Пришлите фото — сделаем визуализацию с нашим гибким кирпичом бесплатно</p>
+                            <a href="https://t.me/itar_kzn" class="btn btn-primary" style="width:100%;justify-content:center;text-decoration:none;" target="_blank">
+                                Получить визуализацию
+                                <i data-lucide="arrow-right" style="width:18px;height:18px;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <!-- Top accent line -->
+        <div style="height:1px;background:linear-gradient(90deg,transparent,var(--color-orange-600),transparent);"></div>
+
+        <div class="container">
+
+            <!-- Main footer grid -->
+            <div class="footer-main">
+
+                <!-- Brand column -->
+                <div class="footer-brand">
+                    <a href="index.html" class="flex items-center gap-3" style="text-decoration:none;margin-bottom:1.5rem;display:inline-flex;">
+                        <div style="width:2.75rem;height:2.75rem;background:linear-gradient(135deg,var(--color-orange-600),#ff8c42);border-radius:0.75rem;display:flex;align-items:center;justify-content:center;color:white;font-weight:900;font-size:1rem;box-shadow:0 4px 16px rgba(234,88,12,0.4);">IT</div>
+                        <div>
+                            <div class="font-black tracking-tight uppercase" style="font-size:1.125rem;color:white;line-height:1;">ITAR<span style="color:var(--color-orange-600);">.</span>KZN</div>
+                            <div style="font-size:0.625rem;color:#64748b;letter-spacing:0.08em;text-transform:uppercase;margin-top:2px;">Производство · Казань</div>
+                        </div>
+                    </a>
+                    <p style="font-size:0.875rem;color:#64748b;line-height:1.7;max-width:22rem;">
+                        Собственное производство гибкого кирпича и гибкой доски. Работаем с 2018 года. 12 коллекций, монтаж любой бригадой или самостоятельно по всей России.
+                    </p>
+                </div>
+
+                <!-- Products -->
+                <div class="footer-col">
+
+                    <ul class="footer-links">
+                        <li><a href="index.html#catalog">Гибкий кирпич</a></li>
+                        <li><a href="index.html#catalog">Гибкая доска</a></li>
+                        <li><a href="index.html#catalog">Баварская кладка</a></li>
+                        <li><a href="index.html#catalog">Клинкерный формат</a></li>
+                    </ul>
+                </div>
+
+                <!-- Partners -->
+                <div class="footer-col">
+
+                    <ul class="footer-links">
+                        <li><a href="#">Для архитекторов</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contacts -->
+                <div class="footer-col">
+
+                    <ul class="footer-contact-list">
+                        <li>
+                            <i data-lucide="mail" style="width:15px;height:15px;color:var(--color-orange-600);flex-shrink:0;"></i>
+                            <a href="mailto:ajnur.axmadiev@yandex.ru">ajnur.axmadiev@yandex.ru</a>
+                        </li>
+                        <li>
+                            <i data-lucide="phone" style="width:15px;height:15px;color:var(--color-orange-600);flex-shrink:0;"></i>
+                            <a href="tel:+79600774901" style="font-weight:700;color:white;">+7 (960) 077-49-01</a>
+                        </li>
+                    </ul>
+                    <a href="tel:+79600774901" class="btn btn-primary footer-cta-btn">
+                        Позвонить нам
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Divider -->
+            <div style="height:1px;background:rgba(255,255,255,0.06);margin:2.5rem 0 1.5rem;"></div>
+
+            <!-- Footer bottom -->
+            <div class="footer-bottom">
+                <p>© 2026 Итар-Казань. Все права защищены.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Публичная оферта</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Toast -->
+    <div id="copyToast">
+        <div class="toast-icon">
+            <i data-lucide="check" style="width:12px;height:12px;color:white;"></i>
+        </div>
+        <span>Скопировано в буфер обмена</span>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // ── Copy to clipboard ──
+        function copyText(text, btn) {
+            navigator.clipboard.writeText(text).then(() => {
+                // Button feedback
+                const original = btn.innerHTML;
+                btn.classList.add('copied');
+                btn.innerHTML = '<i data-lucide="check" style="width:13px;height:13px;"></i> Скопировано';
+                lucide.createIcons();
+
+                setTimeout(() => {
+                    btn.classList.remove('copied');
+                    btn.innerHTML = original;
+                    lucide.createIcons();
+                }, 2000);
+
+                // Toast
+                showToast();
+            }).catch(() => {
+                // Fallback for older browsers
+                const el = document.createElement('textarea');
+                el.value = text;
+                document.body.appendChild(el);
+                el.select();
+                document.execCommand('copy');
+                document.body.removeChild(el);
+                showToast();
+            });
+        }
+
+        function showToast() {
+            const toast = document.getElementById('copyToast');
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2500);
+        }
+
+        function copyAllRequisites() {
+            const all = `ИП Ахмадиев Айнур Альбертович
+ИНН: 160102074997
+ОГРН: 32216900094458
+Юридический адрес: 422223, Россия, Республика Татарстан, Агрызский район, д. Касаево, ул. Центральная, 55
+Банк: ООО «ОЗОН Банк»
+БИК: 044525068
+Расчётный счёт: 40802810500000379362
+Корреспондентский счёт: 30101810645374525068
+Телефон: +7 (960) 077-49-01
+E-mail: ajnur.axmadiev@yandex.ru`;
+
+            const btn = document.getElementById('copyAllBtn');
+            navigator.clipboard.writeText(all).then(() => {
+                const original = btn.innerHTML;
+                btn.innerHTML = '<i data-lucide="check" style="width:18px;height:18px;"></i> Все реквизиты скопированы!';
+                btn.style.background = '#16a34a';
+                lucide.createIcons();
+                setTimeout(() => {
+                    btn.innerHTML = original;
+                    btn.style.background = '';
+                    lucide.createIcons();
+                }, 3000);
+                showToast();
+            });
+        }
+
+        // Make lucide icons work after dynamic updates
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            // mobile menu
+            const btn = document.getElementById('mobileMenuBtn');
+            const overlay = document.getElementById('mobileMenuOverlay');
+            const closeBtn = document.getElementById('mobileMenuCloseBtn');
+            if (btn && overlay && closeBtn) {
+                btn.addEventListener('click', () => overlay.classList.add('active'));
+                closeBtn.addEventListener('click', () => overlay.classList.remove('active'));
+                overlay.querySelectorAll('a').forEach(a => a.addEventListener('click', () => overlay.classList.remove('active')));
+            }
+        });
+    </script>
+    <script src="https://vladmarketolog.ru/vlad-badge.js" async></script>
+</body>
+</html>
